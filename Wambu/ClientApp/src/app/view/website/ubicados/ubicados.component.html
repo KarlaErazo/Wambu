@@ -1,0 +1,24 @@
+<app-menu [fmrMenu]="fmrDatos.fmrMenu"></app-menu>
+<div class="page-contain">
+  <div id="main-content" class="main-content">
+    <div class="hero-section hero-background">
+      <h1 class="page-title">Ubicación</h1>
+    </div>
+  </div>
+
+  <div class="page-contain contact-us">
+
+    <!-- Main content -->
+    <div id="main-content" class="main-content">
+      <div class="wrap-map biolife-wrap-map" id="map-block">
+        <iframe width="1920" height="591" [src]="verContenido(fmrUbicacion.coordenadas)" frameborder="0" scrolling="no"
+          marginheight="0" marginwidth="0">
+        </iframe>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<app-footer [fmrFooter]="fmrDatos.fmrFooter"></app-footer>

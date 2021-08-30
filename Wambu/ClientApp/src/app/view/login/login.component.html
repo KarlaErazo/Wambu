@@ -1,0 +1,66 @@
+<app-menu [fmrMenu]="fmrDatos.fmrMenu"></app-menu>
+<div class="page-contain login-page">
+
+  <!-- Main content -->
+  <div id="main-content" class="main-content">
+    <div class="container">
+
+      <div class="row">
+        <br><br><br>
+        <ul class="nav nav-tabs">
+          <li (click)="cambioDiv(1)" id="login" class="active"><a>Iniciar Sesión</a></li>
+          <li (click)="cambioDiv(2)" id="registro"><a>Registro</a></li>
+        </ul>
+
+
+        <div *ngIf="div.login" class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <div class="signin-container">
+            <div name="frm-login">
+              <p class="form-row">
+                <label for="fid-name">Correo Electrónico:<span class="requite">*</span></label>
+                <input type="text" id="fid-name" name="name" value="" class="txt-input" [(ngModel)]="frmLogin.Email">
+              </p>
+              <p class="form-row">
+                <label for="fid-pass">Contraseña:<span class="requite">*</span></label>
+                <input type="password" id="fid-pass" name="email" value="" class="txt-input"
+                  [(ngModel)]="frmLogin.Contrasena">
+              </p>
+              <p class="form-row wrap-btn">
+                <button class="btn btn-submit btn-bold" type="submit" (click)="iniciarSesion()">Iniciar Sesión</button>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="div.register" class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <div class="signin-container">
+            <div name="frm-login">
+              <p class="form-row">
+                <label for="fid-name">Correo Electrónico:<span class="requite">*</span></label>
+                <input type="text" id="fid-name" name="name" value="" class="txt-input" [(ngModel)]="fmrRegistro.Email">
+              </p>
+              <p class="form-row">
+                <label for="fid-pass">Contraseña:<span class="requite">*</span></label>
+                <input type="password" id="fid-pass" name="email" value="" class="txt-input"
+                  [(ngModel)]="fmrRegistro.Contrasena">
+              </p>
+              <p class="form-row">
+                <label for="fid-pass">Repetir Contraseña:<span class="requite">*</span></label>
+                <input type="password" id="fid-pass" name="email" value="" class="txt-input"
+                  [(ngModel)]="fmrRegistro.Contrasena2">
+              </p>
+              <p class="form-row wrap-btn">
+                <button class="btn btn-submit btn-bold" type="submit" (click)="registro()">Registrar</button>
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <br><br><br>
+    </div>
+
+  </div>
+
+</div>
+<app-footer [fmrFooter]="fmrDatos.fmrFooter"></app-footer>

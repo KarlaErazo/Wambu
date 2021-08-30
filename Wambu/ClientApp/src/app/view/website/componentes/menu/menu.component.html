@@ -1,0 +1,165 @@
+<header id="header" class="header-area style-01 layout-03">
+  <div class="header-top bg-main hidden-xs">
+    <div class="container">
+      <div class="top-bar left">
+        <ul class="horizontal-menu">
+          <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>{{ fmrMenu.email }}</a></li>
+          <li><a href="#">La mejor calidad en jugos</a></li>
+        </ul>
+      </div>
+      <div class="top-bar right">
+        <ul class="social-list">
+          <li><a href="{{ fmrMenu.facebook }}" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+          </li>
+          <li><a href="{{ fmrMenu.instagram }}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+          </li>
+        </ul>
+        <ul class="horizontal-menu">
+          <li>
+            <a *ngIf="usuario == undefined" [routerLink]="['/login']" class="login-link">
+              <i class="biolife-icon icon-login"></i>Ingresa/Registrate
+            </a>
+
+            <a *ngIf="usuario != undefined" [routerLink]="['/administrador/contenido']" class="login-link">
+              <i class="biolife-icon icon-login"></i> {{ usuario.email }}
+            </a>
+          </li>
+        </ul>
+        <ul *ngIf="usuario != undefined" class="horizontal-menu">
+          <li>
+            <a (click)="cerrarSesion()" style="cursor: pointer; ">
+              Cerrar Sesión <i class="fa fa-sign-out" style="font-size: 21px;"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="header-middle biolife-sticky-object ">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-2 col-md-6 col-xs-6">
+          <a [routerLink]="['/']" class="biolife-logo"><img [src]="fmrMenu.logo" alt="Wambú" width="135"
+              height="34"></a>
+        </div>
+        <div class="col-lg-6 col-md-7 hidden-sm hidden-xs">
+          <div class="primary-menu">
+            <ul class="menu biolife-menu clone-main-menu clone-primary-menu" id="primary-menu"
+              data-menuname="main menu">
+              <li class="menu-item"><a [routerLink]="['/']">Inicio</a></li>
+              <li class="menu-item"><a [routerLink]="['/conocenos']">Conócenos</a></li>
+              <li class="menu-item"><a [routerLink]="['/productos']">Productos</a></li>
+              <li class="menu-item"><a [routerLink]="['/ubicacion']">Ubicación</a></li>
+              <li class="menu-item"><a [routerLink]="['/contactos']">Contactos</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-md-6 col-xs-6">
+          <div class="biolife-cart-info">
+            <div class="mobile-search">
+              <a href="javascript:void(0)" class="open-searchbox"><i class="biolife-icon icon-search"></i></a>
+              <div class="mobile-search-content">
+                <form action="#" class="form-search" name="mobile-seacrh" method="get">
+                  <a href="#" class="btn-close"><span class="biolife-icon icon-close-menu"></span></a>
+                  <input type="text" name="s" class="input-text" value="" placeholder="Buscar...">
+
+                  <button type="submit" class="btn-submit">Buscar</button>
+                </form>
+              </div>
+            </div>
+            <div class="wishlist-block hidden-sm hidden-xs">
+              <a href="#" class="link-to">
+                <span class="icon-qty-combine">
+                  <i class="icon-heart-bold biolife-icon"></i>
+
+                </span>
+              </a>
+            </div>
+            <div class="minicart-block">
+              <div class="minicart-contain">
+                <a href="javascript:void(0)" class="link-to">
+                  <span class="icon-qty-combine">
+                    <i class="icon-cart-mini biolife-icon"></i>
+                  </span>
+                  <span class="title">Carrito -</span>
+                  <span class="sub-total">$0.00</span>
+                </a>
+              </div>
+            </div>
+            <div class="mobile-menu-toggle">
+              <a class="btn-toggle" data-object="open-mobile-menu" href="javascript:void(0)">
+                <span></span>
+                <span></span>
+                <span></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header-bottom hidden-sm hidden-xs">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-4">
+          <div class="vertical-menu vertical-category-block">
+            
+          </div>
+        </div>
+        <div class="col-lg-9 col-md-8 padding-top-2px">
+          <div class="header-search-bar layout-01">
+            <form action="#" class="form-search" name="desktop-seacrh" method="get">
+              <input type="text" name="s" class="input-text" value="" placeholder="Buscar...">
+
+              <button type="submit" class="btn-submit"><i class="biolife-icon icon-search"></i></button>
+            </form>
+          </div>
+          <div class="live-info">
+            <p class="telephone"><i class="fa fa-phone" aria-hidden="true"></i><b class="phone-number">{{
+                fmrMenu.telefono }}</b></p>
+            <p class="working-time" style="font-size: 13px;">{{ fmrMenu.horarios }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-block-global">
+  <div class="biolife-mobile-panels">
+    <span class="biolife-current-panel-title">Global</span>
+    <a class="biolife-close-btn" data-object="global-panel-opened" href="#">&times;</a>
+  </div>
+  <div class="block-global-contain">
+    <div class="glb-item my-account">
+      <b class="title">My Account</b>
+      <ul class="list">
+        <li class="list-item"><a href="#">Login/register</a></li>
+        <li class="list-item"><a href="#">Wishlist <span class="index">(8)</span></a></li>
+        <li class="list-item"><a href="#">Checkout</a></li>
+      </ul>
+    </div>
+    <div class="glb-item currency">
+      <b class="title">Currency</b>
+      <ul class="list">
+        <li class="list-item"><a href="#">€ EUR (Euro)</a></li>
+        <li class="list-item"><a href="#">$ USD (Dollar)</a></li>
+        <li class="list-item"><a href="#">£ GBP (Pound)</a></li>
+        <li class="list-item"><a href="#">¥ JPY (Yen)</a></li>
+      </ul>
+    </div>
+    <div class="glb-item languages">
+      <b class="title">Language</b>
+      <ul class="list inline">
+        <li class="list-item"><a href="#"><img src="assets/images/languages/us.jpg" alt="flag" width="24"
+              height="18"></a></li>
+        <li class="list-item"><a href="#"><img src="assets/images/languages/fr.jpg" alt="flag" width="24"
+              height="18"></a></li>
+        <li class="list-item"><a href="#"><img src="assets/images/languages/ger.jpg" alt="flag" width="24"
+              height="18"></a></li>
+        <li class="list-item"><a href="#"><img src="assets/images/languages/jap.jpg" alt="flag" width="24"
+              height="18"></a></li>
+      </ul>
+    </div>
+  </div>
+</div>

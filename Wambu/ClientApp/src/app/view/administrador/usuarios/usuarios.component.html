@@ -1,0 +1,100 @@
+<app-menu [fmrMenu]="fmrDatos.fmrMenu"></app-menu>
+<br>
+<div class="page-contain">
+  <div id="main-content" class="main-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-4 hidden-sm hidden-xs">
+          <app-modulos></app-modulos>
+        </div>
+        <div class="col-lg-9 col-md-8 col-xs-12">
+          <div style="min-height: 600px !important; border-radius: 15px; border: 1px solid #ddd; padding: 25px;">
+            <h4><b>Usuarios</b></h4>
+            <hr>
+            <div class="row">
+              <div class="col-md-12">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#AddProducto">
+                  <i class="fa fa-floppy-o" aria-hidden="true"></i> Agregar
+                </button>
+                <br><br>
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th><b>#</b></th>
+                        <th><b>Email</b></th>
+                        <th><b>Rol</b></th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let dato_ of lstUsuarios">
+                        <td>{{ dato_.idUsuario }}</td>
+                        <td>{{ dato_.email }}</td>
+                        <td>{{ dato_.rol }}</td>
+                        <td>
+                          <button class="btn btn-warning" data-toggle="modal" data-target="#AddProducto"
+                            (click)="datosModificar(dato_)">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr *ngIf="lstUsuarios.length == 0">
+                        <td colspan="4">Sin registros</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<app-footer [fmrFooter]="fmrDatos.fmrFooter"></app-footer>
+
+
+<div class="modal fade" id="AddProducto" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="modalLabel">Gestión Usuario</h4>
+      </div>
+      <div class="modal-body">
+        <div style="border-radius: 5px; border: 1px solid #ddd; padding: 20px;">
+          <p class="form-row" style="display: none;">
+            <b>#</b><br>
+            <input type="text" class="txt-input" [(ngModel)]="fmrUsuario.idUsuario" style="width: 100%;">
+          </p>
+          <p class="form-row">
+            <b>Email</b><br>
+            <input type="text" class="txt-input" [(ngModel)]="fmrUsuario.email" style="width: 100%;">
+          </p>
+
+          <p class="form-row">
+            <b>Rol</b><br>
+            <select  [(ngModel)]="fmrUsuario.rol" style="width: 100%; border: 1px solid #ddd; color: black;">
+              <option value="ADMINISTRADOR">ADMINISTRADOR</option>
+              <option value="USUARIO">USUARIO</option>
+            </select>
+          </p>
+
+         
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success" (click)="guardar()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>

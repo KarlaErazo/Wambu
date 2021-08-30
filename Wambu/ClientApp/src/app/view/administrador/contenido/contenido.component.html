@@ -1,0 +1,119 @@
+<app-menu [fmrMenu]="fmrDatos.fmrMenu"></app-menu>
+<br>
+<div class="page-contain">
+  <div id="main-content" class="main-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-4 hidden-sm hidden-xs">
+          <app-modulos></app-modulos>
+        </div>
+        <div class="col-lg-9 col-md-8 col-xs-12">
+          <div style="min-height: 600px !important; border-radius: 15px; border: 1px solid #ddd; padding: 25px;">
+            <h4><b>Módulos</b></h4>
+            <hr>
+            <div class="row">
+              <div class="col-md-2">
+                <button class="btn btn-default" style="width: 100%;" (click)="obtenerModulos(6)">
+                  <i class="fa fa-home" style="font-size: 35px;"></i><br>
+                  Cabecera
+                </button><br><br>
+                <button class="btn btn-default" style="width: 100%;" (click)="obtenerModulos(7)">
+                  <i class="fa fa-home" style="font-size: 35px;"></i><br>
+                  Pie de Página
+                </button><br><br>
+                <button class="btn btn-default" style="width: 100%;" (click)="obtenerModulos(1)">
+                  <i class="fa fa-home" style="font-size: 35px;"></i><br>
+                  Inicio
+                </button><br><br>
+                <button class="btn btn-default" style="width: 100%;" (click)="obtenerModulos(2)">
+                  <i class="fa fa-home" style="font-size: 35px;"></i><br>
+                  Conócenos
+                </button><br><br>
+                <button class="btn btn-default" style="width: 100%;" (click)="obtenerModulos(4)">
+                  <i class="fa fa-home" style="font-size: 35px;"></i><br>
+                  Ubicación
+                </button>
+              </div>
+              <div class="col-md-10" style="border-left: 1px solid #ddd;">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th><b>Nombre</b></th>
+                        <th><b>Descripción</b></th>
+                        <th><b>Imagen</b></th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let dato_ of lstContenido">
+                        <td>{{ dato_.nombre }}</td>
+                        <td>
+                          <span *ngIf="dato_.descripcion != ''" type="text" class="txt-input" style="width: 100%;">
+                            {{dato_.descripcion}}
+                          </span>
+                        </td>
+                        <td><img *ngIf="dato_.imagen != ''" [src]="dato_.imagen" alt="" width="100"></td>
+                        <td>
+                          <button class="btn btn-warning" data-toggle="modal" data-target="#flipFlop"
+                            (click)="datosModificar(dato_)">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr *ngIf="lstContenido.length == 0">
+                        <td colspan="4">Sin registros</td>
+                      </tr>
+                    </tbody>
+                  </table>
+  
+                </div>
+              
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<app-footer [fmrFooter]="fmrDatos.fmrFooter"></app-footer>
+
+<!-- The modal -->
+<div class="modal fade" id="flipFlop" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="modalLabel">Editar Módulo</h4>
+      </div>
+      <div class="modal-body">
+        <div style="border-radius: 5px; border: 1px solid #ddd; padding: 20px;">
+          <p class="form-row">
+            <b>Nombre</b><br>
+            <span class="txt-input">{{ frmContenido.nombre }}</span>
+          </p>
+          <p *ngIf="frmContenido.descripcion != ''" class="form-row">
+            <b>Descripción</b><br>
+            <textarea class="txt-input" [(ngModel)]="frmContenido.descripcion" style="width: 100%;" cols="30"
+              rows="10"></textarea>
+          </p>
+          <p *ngIf="frmContenido.imagen != ''" class="form-row">
+            <b>Imagen</b><br>
+            <img [src]="frmContenido.imagen" alt="" width="150">
+            <br><br>
+            <input type="file" id="ImagenContenido" class="upload" (change)="obtenerImagen()" class="txt-input" style="width: 100%;">
+          </p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success" (click)="guardar()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>

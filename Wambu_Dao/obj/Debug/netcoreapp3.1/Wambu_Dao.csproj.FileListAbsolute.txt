@@ -1,0 +1,12 @@
+C:\Users\MPALOMO\Documents\Programacion\Wambu\Wambu\Wambu_Dao\bin\Debug\netcoreapp3.1\Wambu_Dao.deps.json
+C:\Users\MPALOMO\Documents\Programacion\Wambu\Wambu\Wambu_Dao\bin\Debug\netcoreapp3.1\Wambu_Dao.dll
+C:\Users\MPALOMO\Documents\Programacion\Wambu\Wambu\Wambu_Dao\bin\Debug\netcoreapp3.1\Wambu_Dao.pdb
+C:\Users\MPALOMO\Documents\Programacion\Wambu\Wambu\Wambu_Dao\bin\Debug\netcoreapp3.1\Wambu_Dto.dll
+C:\Users\MPALOMO\Documents\Programacion\Wambu\Wambu\Wambu_Dao\bin\Debug\netcoreapp3.1\Wambu_Dto.pdb
+C:\Users\MPALOMO\Documents\Programacion\Wambu\Wambu\Wambu_Dao\obj\Debug\netcoreapp3.1\Wambu_Dao.csprojAssemblyReference.cache
+C:\Users\MPALOMO\Documents\Programacion\Wambu\Wambu\Wambu_Dao\obj\Debug\netcoreapp3.1\Wambu_Dao.AssemblyInfoInputs.cache
+C:\Users\MPALOMO\Documents\Programacion\Wambu\Wambu\Wambu_Dao\obj\Debug\netcoreapp3.1\Wambu_Dao.AssemblyInfo.cs
+C:\Users\MPALOMO\Documents\Programacion\Wambu\Wambu\Wambu_Dao\obj\Debug\netcoreapp3.1\Wambu_Dao.csproj.CoreCompileInputs.cache
+C:\Users\MPALOMO\Documents\Programacion\Wambu\Wambu\Wambu_Dao\obj\Debug\netcoreapp3.1\Wambu_Dao.csproj.CopyComplete
+C:\Users\MPALOMO\Documents\Programacion\Wambu\Wambu\Wambu_Dao\obj\Debug\netcoreapp3.1\Wambu_Dao.dll
+C:\Users\MPALOMO\Documents\Programacion\Wambu\Wambu\Wambu_Dao\obj\Debug\netcoreapp3.1\Wambu_Dao.pdb

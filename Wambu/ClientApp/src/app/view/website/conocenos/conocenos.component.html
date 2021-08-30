@@ -1,0 +1,49 @@
+<app-menu [fmrMenu]="fmrDatos.fmrMenu"></app-menu>
+<div class="page-contain">
+  <div id="main-content" class="main-content">
+    <div class="hero-section hero-background">
+      <h1 class="page-title">Conócenos</h1>
+    </div>
+    <div class="page-contain about-us">
+
+      <!-- Main content -->
+      <div id="main-content" class="main-content">
+
+        <div class="welcome-us-blocks" style="padding-top: 20px; padding-bottom: 20px;">
+          <div class="container">
+            <div style="text-align: center;">
+              <h4 class="title" style="font-size: 40px; color: #222222; font-weight: 700;">Bienvenido a Jugos Wambú!
+              </h4>
+            </div>
+            <br>
+            <div class="text-wraper">
+              <div class="row">
+                <div class="col-md-6">
+                  <iframe style="width: 100% !important; height: 570px;"  [src]="verContenido(fmrConocenos.video)" frameborder="0" allow="autoplay">
+                  </iframe>
+                 
+                </div>
+                <div class="col-md-6">
+                  <br><br>
+                  <div [innerHTML]="fmrConocenos.texto"></div>
+                  
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+        <div class="why-choose-us-block">
+          <div class="container">
+            <img [src]="fmrConocenos.imagen" alt="">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<app-footer [fmrFooter]="fmrDatos.fmrFooter"></app-footer>

@@ -1,0 +1,51 @@
+<app-menu  [fmrMenu]="fmrDatos.fmrMenu"></app-menu>
+<div class="page-contain">
+  <div id="main-content" class="main-content">
+    <div class="hero-section hero-background">
+      <h1 class="page-title">Contactos</h1>
+    </div>
+  </div>
+
+  <div class="page-contain contact-us">
+
+    <!-- Main content -->
+    <div id="main-content" class="main-content">
+
+
+      <div class="container">
+
+        <div class="row">
+          <br><br><br>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <img src="assets/images/3.jpg" alt="" style="width: 100% !important;">
+          </div>
+          <!--Contact form-->
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="contact-form-container sm-margin-top-112px">
+              <form action="#" name="frm-contact">
+                <p class="form-row">
+                  <input type="text" name="name" value="" placeholder="Nombre" class="txt-input" [(ngModel)]="fmrContacto.Nombre">
+                </p>
+                <p class="form-row">
+                  <input type="email" name="email" value="" placeholder="Correo Electrónico" class="txt-input" [(ngModel)]="fmrContacto.Email">
+                </p>
+                <p class="form-row">
+                  <input type="tel" name="phone" value="" placeholder="Teléfono" class="txt-input" [(ngModel)]="fmrContacto.Telefono">
+                </p>
+                <p class="form-row">
+                  <textarea name="mes" id="mes-1" cols="30" rows="9" placeholder="Mensaje" [(ngModel)]="fmrContacto.Mensaje"></textarea>
+                </p>
+                <p class="form-row">
+                  <button class="btn btn-submit" type="submit" (click)="contactar()">Enviar Mensaje</button>
+                </p>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer [fmrFooter]="fmrDatos.fmrFooter"></app-footer>
+

@@ -1,0 +1,78 @@
+<app-menu [fmrMenu]="fmrDatos.fmrMenu"></app-menu>
+<div class="page-contain">
+  <div id="main-content" class="main-content">
+    <div class="hero-section hero-background">
+      <h1 class="page-title">Productos</h1>
+    </div>
+  </div>
+
+  <div class="page-contain category-page no-sidebar">
+    <div class="container">
+      <div class="row">
+
+        <!-- Main content -->
+        <div id="main-content" class="main-content col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+          <ng-container *ngFor="let producto of lstProductos">
+            <div class="product-category grid-style">
+
+              <div id="top-functions-area" class="top-functions-area">
+                <div class="flt-item to-left group-on-mobile">
+                 
+                </div>
+                <div class="flt-item to-right">
+             
+                </div>
+              </div>
+  
+              <div class="row">
+                <ul class="products-list">
+  
+                  <li class="product-item col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                    <div class="contain-product layout-default">
+                      <div class="product-thumb">
+                        <a [routerLink]="['/producto-detalle/' + producto.idProducto]" class="link-to-product">
+                          <img src="{{ producto.imagen }}" alt="dd" width="270" height="270"
+                            class="product-thumnail">
+                        </a>
+                      </div>
+                      <div class="info">
+                        <b class="categories">{{ producto.tipo }}</b>
+                        <h4 class="product-title"><a [routerLink]="['/producto-detalle/' + producto.idProducto]" class="pr-name">{{ producto.nombre }}</a></h4>
+                        <div class="price">
+                          <ins><span class="price-amount"><span class="currencySymbol">$</span>{{ producto.precio }}</span></ins>
+                        </div>
+                        <div class="shipping-info">
+                          <p class="shipping-day">Natural</p>
+                          <p class="for-today">Cold Pressed</p>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </li>
+  
+                </ul>
+              </div>
+  
+              <div class="biolife-panigations-block">
+                <ul class="panigation-contain">
+                  <li><span class="current-page">1</span></li>
+                  <li><a href="#" class="link-page">2</a></li>
+                  <li><a href="#" class="link-page">3</a></li>
+                  <li><span class="sep">....</span></li>
+                  <li><a href="#" class="link-page">20</a></li>
+                  <li><a href="#" class="link-page next"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                </ul>
+              </div>
+  
+            </div>
+          </ng-container>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer  [fmrFooter]="fmrDatos.fmrFooter"></app-footer>
